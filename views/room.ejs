@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rocket Q | Perguntas </title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/room.css">
+
+    <!-- Scripts -->
+    <script src="scripts/main.js" defer type="module"></script>
+
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.svg" alt="Rocket-Q Logo">
+
+        <div class="buttons">
+            <a class="button white-button" href="/"> 
+                #323243 
+                <img src="images/copy.svg" alt="copy">
+            </a>
+    
+            <a class="button blue-button" href="/">
+                <img src="images/users-white.svg" alt="users">
+                Criar sala
+            </a>
+        </div>
+        
+    </header>
+
+    <div class="container">
+        <h1> Faça sua pergunta </h1>
+
+        <div class="question-form">
+            <form method="post" action="room">
+                <label class="sr-only" for-id="question">O que você quer perguntar?</label>
+                <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>  
+                <footer>
+                    <div>
+                        <img src="images/lock.svg" alt="lock">
+                        <p>Esta pergunta é anônima</p>
+                    </div>
+                    <button class="button blue-button send-button" type="submit">Enviar</button>
+                </footer>
+
+            </form>
+
+
+        </div>
+
+        <!-- Empty State -->
+            <div class="empty-state">
+                <img src="images/balloons.svg" alt="dialog-box">
+                <h2> Nenhuma pergunta por aqui...</h2>
+                <p>Faça sua primeira pergunta e envie o código dessa sala para outras pessoas!</p>
+            </div>
+
+        <!-- Questions Area --> 
+            <div class="questions">
+
+                <% questions.forEach(function(question) { %>
+                    <div class="question">
+                        <div class="question-content">
+                            <img src="images/user-blue.svg" alt="user">
+                                <p> <%= question %> </p>
+                        </div>
+                        
+                        <footer>
+                            <a class="button check-button"  href="#">
+                                <img src="images/check.svg" alt="check">
+                                <p>Marcar como lida</p>
+                            </a>
+                            
+                            <a class="button delete-button" href="#">
+                                <img src="images/trash.svg" alt="trash">
+                                <p>Excluir</p>
+                            </a>
+                            
+                            
+                        </footer>
+                    </div>
+                <% }) %>
+
+            </div>
+        
+        <!-- Modal -->
+            <div class="modal inactive">
+                <div class="modal-container">
+                    <h1>Excluir pergunta</h1>
+                    <p>Tem certeza que você deseja excluir esta pergunta?</p>
+                    <input type="password">
+
+                    <div class="actions">
+                        <a class="button grey-button cancel-button" href="#">
+                            Cancelar
+                        </a>
+    
+                        <a class="button blue-button">
+                            Sim, excluir
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+
+    </div>
+
+</body>
+</html>
