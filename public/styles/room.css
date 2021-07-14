@@ -1,0 +1,235 @@
+/****** Header ******/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    
+    padding-top: 3.2rem;
+}
+
+header .buttons {
+    display: flex;
+}
+
+header .buttons .button {
+    height: 5rem;
+}
+
+header .buttons .button.white-button {
+    width: 13.4rem;
+    margin-right: .8rem;
+}
+
+header .buttons .button.white-button img {
+    margin-right: 0rem;
+    margin-left: 1rem;
+}
+
+
+header .buttons .button.blue-button {
+    width: 17.3rem;
+}
+
+/****** Main Container ******/
+.container {
+    width: 112rem;
+    margin: 0 auto;
+    margin-top: 6.4rem;
+}
+
+/****** Question Form Area ******/
+
+.question-form {
+    margin: 2.4rem 0 2.5rem;
+    height: 13.4rem;
+    border: .2rem solid var(--grey-blue);
+    border-radius: 0 .8rem .8rem .8rem;
+}
+
+.question-form textarea {
+    width: 100%;
+    padding: 1.2rem 1.6rem 0 1.6rem;
+    
+    outline: none;
+    resize: none;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    color: var(--grey-blue);
+}
+
+.question-form footer {
+    padding: 0rem 1.6rem 1.6rem 1.6rem;
+    margin-top: 2.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question-form footer :nth-child(1) {
+    display: flex;
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    color: var(--grey-light);
+}
+
+.question-form footer :nth-child(1) img {
+    padding-right: .6rem;
+}
+
+.question-form footer .button {
+    padding: .8rem 2.4rem;
+}
+
+/****** Empty State ******/
+
+.empty-state {
+    margin-top: 5.2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.empty-state img {
+    width: 13.5rem;
+    height: 11.8rem;
+
+    margin-bottom: 2.2rem;
+}
+
+.empty-state p {
+    width: 27.7rem;
+    margin-top: 1.3rem;
+    
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4rem;
+    color: var(--grey-dark);
+    text-align: center;
+    line-height: 1.9rem;
+}
+
+
+/****** Questions ******/
+.questions .question {
+    background: var(--light-blue);
+    border-radius: 0 .8rem .8rem .8rem;
+    height: 13.6rem;
+    padding: 2.4rem 3.2rem 2.4rem 2.4rem;
+    margin-top: .8rem;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    color: var(--black);
+
+}
+
+.questions :nth-child(1) {
+    margin-top: 0rem;
+}
+
+
+.questions .question .question-content {
+    display: flex;
+    align-items: center;
+}
+
+.questions .question .question-content img {
+    width: 5.2rem;
+    height: 5.2rem;
+
+    margin-right: 1.6rem;
+}
+
+.questions .question footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.questions .question footer .button {
+    background: var(--light-blue);
+    
+    display: flex;
+    align-items: center;
+}
+
+.questions .question footer .button {
+    text-decoration: none;
+    font-weight: normal;
+    color: var(--black);
+}
+
+.questions .question footer .button img {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: .8rem;
+}
+
+.questions .question footer :nth-child(1) p {
+    margin-right: 2.4rem;
+}
+
+.questions .question.read-question {
+    background: var(--grey-light);
+}
+
+.questions .question.read-question :nth-child(2) {
+    background: var(--grey-light);
+}
+
+.questions .question.read-question :nth-child(2) > :nth-child(2) {
+    visibility: hidden;
+    position: absolute;
+}
+/****** Modal ******/
+.modal {
+    width: 100%;
+    height: 120%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: rgba(4, 9, 17, .8);
+    opacity: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.modal .modal-container {
+    background: var(--white);
+    width: 59rem;
+    height: 36.2rem;
+    padding: 6.4rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal .modal-container p {
+    padding: 1.2rem 0 2.4rem;
+    
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    color: var(--grey-dark);
+}
+
+.modal .modal-container .actions {
+    margin-top: 4rem;
+    display: flex;
+}
+
+.modal .modal-container .actions .button {
+    padding: 1.3rem 3.2rem;
+}
+
+.modal .modal-container .actions :nth-child(1) {
+    margin-right: .8rem;
+}

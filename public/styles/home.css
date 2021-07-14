@@ -1,0 +1,93 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+/****** Container ******/
+
+.container {
+    display: flex;
+    justify-content: center;
+
+}
+
+/****** Background Container ******/
+
+.bg-container {
+    background: url("/images/home-bg.svg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    position: absolute;
+    width: 756.64px;
+    height: 664.55px;
+    left: -90px;
+    top: 114px;
+}
+
+.ball {
+    clip-path: circle();
+    background: var(--blue);
+    opacity: 0.1;
+
+    position: fixed;
+}
+
+.ball.top {
+    width: 63.3rem;
+    height: 63.3rem;
+
+    top: -38.5rem;
+    right: -32rem;
+}
+
+.ball.bottom {
+    width: 21.2rem;
+    height: 21.2rem;
+
+    bottom: -14.8rem;
+    right: 5.6rem;
+
+}
+
+/****** Main Container (Enter room, Create Room & Separator) ******/
+
+.main-container {
+    position: relative;
+    top: 14.1rem;
+    left: 24.6rem;
+
+    width: 36.3rem;
+}
+
+.main-container input {
+    margin-top: 2.4rem;
+}
+
+.main-container .button {
+    margin-top: 1.8rem;
+    width: 36.3rem;
+    height: 5rem;
+}
+
+.separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.separator p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    color: var(--grey-blue);
+    padding: 0 1.34rem;
+}
+
+.separator :nth-child(1), 
+.separator :nth-child(3) {
+    background: var(--grey-blue);
+    width: 100%;
+    height: 1px;
+}
