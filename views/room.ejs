@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/styles/room.css">
 
     <!-- Scripts -->
-    <script src="scripts/main.js" defer type="module"></script>
+    <script src="/scripts/main.js" defer type="module"></script>
 
 </head>
 <body>
@@ -43,7 +43,7 @@
         <h1> Faça sua pergunta </h1>
 
         <div class="question-form">
-            <!-- <form method="post" action="room"> -->
+            <form method="post" action="<%=roomId%>">
                 <label class="sr-only" for-id="question">O que você quer perguntar?</label>
                 <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>  
                 <footer>

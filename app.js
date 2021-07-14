@@ -10,14 +10,15 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
-
-const questions = [];
+// Consts:
 const rooms = [];
+const questions = [];
 
 //Mongoose
 
 mongoose.connect("mongodb://localhost:27017/roomDB", { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false});
 
+// Schemas
 const roomSchema = {
     roomId: String,
     password: String
@@ -25,6 +26,11 @@ const roomSchema = {
 
 const Room = mongoose.model("Room", roomSchema);
 
+const questionSchema = {
+    content: String,
+};
+
+const Question = mongoose.model("Question", questionSchema);
 
 // Routes
 app.route("/")
@@ -43,7 +49,7 @@ app.route("/create-room")
     res.render("create-room");
 })
 
-.post(function(req, res) { // TO-DO: GERAR UM roomID E ARMAZENAR A password NA BASE DE DADOS
+.post(function(req, res) {
     
     const room = new Room ({
         roomId: Math.floor((Math.random()*1000000)),
@@ -58,29 +64,28 @@ app.route("/create-room")
     
 });
 
-app.route("/room/:roomId") // TO-DO: ESPECIFICAR A roomId NA ROTA DO ROOM
+app.route("/room/:roomId")
 
 .get(function(req, res) {
     const requestedRoom = req.params.roomId;
 
     res.render("room", {questions:questions, roomId: requestedRoom});    
+})
+
+.post(function(req, res) {
+    const requestedRoom = req.params.roomId;
     
+    const question = new Question ({
+        content: req.body.question
+    });
+
+    question.save();
+
+    questions.push(question.content);
+
+    res.redirect("/room/" + requestedRoom);
+
 });
-
-/* .post(function(req, res) {
-    const question = req.body.question;
-    questions.push(question);
-
-    res.redirect("/room");
-}); */
-
-
-
-
-
-
-
-
 
 
 
